@@ -58,16 +58,16 @@ class Particle {
         if (distance < combinedRadius) {
             //Collision detected!
             // Now we check for which direction the mouse is coming from and move the particle to the opposite direction, given that it would still be within the canvas
-            if (mouse.x < this.x && this.x < canvas.width + this.radius * 10) {
+            if (mouse.x < this.x && this.x < (canvas.width + this.radius * 10)) {
                 this.x += 10;
             }
-            if (mouse.x > this.x && this.x > this.radius * 10) {
+            if (mouse.x > this.x && this.x > (this.radius * 10)) {
                 this.x -= 10;
             }
-            if (mouse.y < this.y && this.y < canvas.width + this.radius * 10) {
+            if (mouse.y < this.y && this.y < (canvas.width + this.radius * 10)) {
                 this.y += 10;
             }
-            if (mouse.y > this.y && this.y > this.radius * 10) {
+            if (mouse.y > this.y && this.y > (this.radius * 10)) {
                 this.y -= 10;
             }
 
