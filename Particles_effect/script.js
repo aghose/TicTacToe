@@ -93,7 +93,7 @@ class Particle {
 }
 
 function randomizedSpeed(){
-    return ((Math.random() * 4) - 2);
+    return ((Math.random() * 3) - 1.5);
 }
 
 
@@ -109,7 +109,7 @@ function init() {
     //Will create i number of particles with randomized values and fill up particlesArray
     for (var i = 0; i < numberOfParticles; i++) {
 
-        let radius = (Math.random() * 5) + 1;
+        let radius = (Math.random() * 2) + 1;
         let x = (Math.random() * (canvas.width - radius * 4)) + radius * 4;
         let y = (Math.random() * (canvas.height - radius * 4)) + radius * 4;
         let directionX = randomizedSpeed();
@@ -139,8 +139,8 @@ function connect(){
         for(let j = i; j < particlesArray.length; j++){
             let distance = Math.pow((particlesArray[i].x - particlesArray[j].x), 2) + Math.pow((particlesArray[i].y - particlesArray[j].y), 2);
 
-            if(distance < (canvas.width/10 * canvas.height/10)){
-                opacity = 1 - (distance/20000);
+            if(distance < (canvas.width/9 * canvas.height/9)){
+                opacity = 1 - (distance/10000);
                 ctx.strokeStyle= 'rgba(140, 85, 35,' + opacity + ')';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
