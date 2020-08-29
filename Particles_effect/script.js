@@ -93,7 +93,16 @@ class Particle {
 }
 
 function randomizedSpeed(){
-    return ((Math.random() * 3) - 1.5);
+
+    let speed = ((Math.random() * 3) - 1.5);
+
+    //if speed is too slow, re-roll randomn number generator
+    if (-1 < speed && speed < 1){
+        randomizedSpeed();
+    }
+
+    return speed;
+
 }
 
 
@@ -114,14 +123,6 @@ function init() {
         let y = (Math.random() * (canvas.height - radius * 4)) + radius * 4;
         let directionX = randomizedSpeed();
         let directionY = randomizedSpeed();
-
-        if(directionX === 0){
-            directionX = randomizedSpeed();
-        }
-
-        if(directionY === 0){
-            directionY = randomizedSpeed();
-        }
 
         let color = particleColor;
 
