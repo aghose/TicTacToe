@@ -3,9 +3,9 @@ $( document ).ready(function() {
 
   $board = $('#board');
   for (let i = 0; i < 9; i++) {
-    var button = $('<button >').addClass('cell');
-    var span = $('<span />').addClass('cell-content');
-    button.append(span);
+    var $button = $('<button >').addClass('cell');
+    var $span = $('<span />').addClass('cell-content');
+    $button.append($span);
     $board.append(button);
   }
 
