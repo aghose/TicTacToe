@@ -6,7 +6,7 @@ $( document ).ready(function() {
     var $button = $('<button >').addClass('cell');
     var $span = $('<span />').addClass('cell-content');
     $button.append($span);
-    $board.append(button);
+    $board.append($button);
   }
 
 
